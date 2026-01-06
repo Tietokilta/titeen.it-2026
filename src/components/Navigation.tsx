@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Menu, X, Globe } from 'lucide-react';
-import logo from 'figma:asset/95a6ff320b767a59a9d6035255baa4f58dca2a7d.png';
+import logo from 'figma:asset/titeenit_logo.png';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function Navigation() {

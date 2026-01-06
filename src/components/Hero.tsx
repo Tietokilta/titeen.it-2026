@@ -1,4 +1,4 @@
-import logoImage from 'figma:asset/18f72a3c3f81baf462ffd5e46ada58dab2e98008.png';
+import logoImage from 'figma:asset/titeenit_logo_valmis_ajalla.png';
 import { motion } from 'motion/react';
 import { Countdown } from './Countdown';
 
