@@ -90,23 +90,6 @@
   image-rendering: crisp-edges;
 }
 
-.arcade-glow {
-  filter: drop-shadow(0 0 30px rgba(255, 107, 157, 0.5))
-          drop-shadow(0 0 60px rgba(77, 228, 255, 0.3));
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    filter: drop-shadow(0 0 30px rgba(255, 107, 157, 0.5))
-            drop-shadow(0 0 60px rgba(77, 228, 255, 0.3));
-  }
-  50% {
-    filter: drop-shadow(0 0 40px rgba(255, 107, 157, 0.8))
-            drop-shadow(0 0 80px rgba(77, 228, 255, 0.5));
-  }
-}
-
 .neon-text {
   text-shadow: 
     0 0 5px rgba(255, 107, 157, 0.8),
@@ -144,12 +127,6 @@
   box-shadow: 
     0 0 0px rgba(255, 107, 157, 0.5),
     inset 0 0 0px rgba(255, 107, 157, 0.1);
-}
-
-.neon-box-gold {
-  box-shadow: 
-    0 0 0px rgba(255, 215, 0, 0.5),
-    inset 0 0 0px rgba(255, 215, 0, 0.1);
 }
 
 .retro-title {
@@ -192,29 +169,6 @@
   }
 }
 
-/* Arcade start button blink effect */
-@keyframes arcade-blink {
-  0%, 70% {
-    opacity: 1;
-    text-shadow: 
-      0 0 10px rgba(255, 215, 0, 1),
-      0 0 20px rgba(255, 215, 0, 0.8),
-      0 0 30px rgba(255, 215, 0, 0.6),
-      0 0 40px rgba(255, 215, 0, 0.4);
-  }
-  71%, 100% {
-    opacity: 0.7;
-    text-shadow: 
-      0 0 8px rgba(255, 215, 0, 0.8),
-      0 0 15px rgba(255, 215, 0, 0.5);
-  }
-}
-
-.arcade-start-text {
-  animation: arcade-blink 2s ease-in-out infinite;
-  font-family: 'Press Start 2P', monospace;
-}
-
 /* Logo bounce effect */
 .logo-bounce {
   animation: logo-float 3s ease-in-out infinite;
@@ -227,125 +181,4 @@
   50% {
     transform: translateY(-20px);
   }
-}
-
-/* Glitch effect */
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(0);
-  }
-}
-
-.glitch-effect {
-  animation: glitch 0.3s infinite;
-  animation-timing-function: steps(2, end);
-}
-
-/* Retro pixel animation */
-@keyframes pixel-pulse {
-  0%, 100% {
-    box-shadow: 0 0 10px currentColor;
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 20px currentColor;
-    transform: scale(1.1);
-  }
-}
-
-.pixel-pulse {
-  animation: pixel-pulse 2s ease-in-out infinite;
-}
-
-/* CRT screen effect */
-.crt-screen {
-  position: relative;
-  background: linear-gradient(
-    to bottom,
-    rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.25) 50%
-  );
-  background-size: 100% 4px;
-  animation: crt-flicker 0.15s infinite;
-}
-
-@keyframes crt-flicker {
-  0% {
-    opacity: 0.97;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.97;
-  }
-}
-
-/* Retro border animations */
-@keyframes border-glow {
-  0%, 100% {
-    border-color: #ff6b9d;
-    box-shadow: 0 0 10px #ff6b9d, inset 0 0 10px #ff6b9d;
-  }
-  33% {
-    border-color: #ffd700;
-    box-shadow: 0 0 10px #ffd700, inset 0 0 10px #ffd700;
-  }
-  66% {
-    border-color: #4ecdc4;
-    box-shadow: 0 0 10px #4ecdc4, inset 0 0 10px #4ecdc4;
-  }
-}
-
-.rainbow-border {
-  animation: border-glow 3s linear infinite;
-}
-
-/* Starfield background */
-@keyframes starfield {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100px);
-  }
-}
-
-.starfield {
-  animation: starfield 20s linear infinite;
-}
-
-/* Pixel corner accent */
-.pixel-corner::before,
-.pixel-corner::after {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: currentColor;
-}
-
-.pixel-corner::before {
-  top: -4px;
-  left: -4px;
-}
-
-.pixel-corner::after {
-  bottom: -4px;
-  right: -4px;
 }

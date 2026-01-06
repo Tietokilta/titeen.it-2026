@@ -3,7 +3,7 @@ import { MapPin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function Map() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const locations = [
     { 
@@ -61,7 +61,19 @@ export function Map() {
                     <MapPin className="w-6 h-6 text-[#ffd700]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base sm:text-lg md:text-xl text-[#ffd700] mb-2 break-words">{t(location.nameKey)}</h3>
+                    <h3
+                      lang={language}
+                      className="text-base sm:text-lg md:text-xl text-[#ffd700] mb-2"
+                      style={{
+                        hyphens: 'auto',
+                        WebkitHyphens: 'auto',
+                        msHyphens: 'auto',
+                        overflowWrap: 'break-word', // fallback if hyphenation dictionary missing
+                        wordBreak: 'normal',
+                      }}
+                    >
+                      {t(location.nameKey)}
+                    </h3>
                     <p className="text-white/70">{location.address}</p>
                   </div>
                 </div>
