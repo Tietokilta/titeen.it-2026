@@ -991,6 +991,12 @@
   }
 
   @media (hover: hover) {
+    .hover\:underline:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:border-\[\#ff6b9d\]:hover {
       border-color: #ff6b9d;
     }

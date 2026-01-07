@@ -6,6 +6,16 @@ export function Timetable() {
 
   const schedule = {
     friday: [
+      { time: 'xx:xx', event: t('timetable.placeholder.friday') },
+    ],
+    saturday: [
+      { time: 'yy:yy', event: t('timetable.placeholder.saturday') },
+    ],
+    sunday: [
+      { time: 'zz:zz', event: t('timetable.placeholder.sunday') },
+    ],
+    /*
+    friday: [
       { time: '18:00', event: t('timetable.friday.gala') },
       { time: '23:00', event: t('timetable.friday.afterparty') },
     ],
@@ -19,6 +29,7 @@ export function Timetable() {
     sunday: [
       { time: '12:00', event: t('timetable.sunday.leaving') },
     ],
+    */
   };
 
   return (

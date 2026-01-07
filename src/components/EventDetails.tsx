@@ -67,14 +67,21 @@ export function EventDetails() {
                   {t('event.telegram.title')}
                 </p>
                 <p className="text-white">
-                  {t('event.telegram.text')} <span className="text-[#ff6b9d]">{t('event.telegram.channel')}</span> {t('event.telegram.rest')}
+                  {t('event.telegram.text')} <a 
+                    href="https://t.me/titeenientaistot" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#ff6b9d] hover:underline"
+                  >
+                    {t('event.telegram.channel')}
+                  </a> {t('event.telegram.rest')}
                 </p>
               </div>
             </div>
           </div>
         </motion.div>
 
-        {/* Sponsors Section */}
+        {/* Sponsors Section 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,6 +103,7 @@ export function EventDetails() {
             ))}
           </div>
         </motion.div>
+        */}
       </div>
     </section>
   );

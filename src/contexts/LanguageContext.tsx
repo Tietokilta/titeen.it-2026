@@ -33,7 +33,7 @@ const translations = {
     'event.title': 'TAPAHTUMAN TIEDOT',
     'event.date': 'Päivämäärä',
     'event.location': 'Sijainti',
-    'event.description': 'Valmistaudu eeppiseen elämykseen Otaniemessä! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    'event.description': 'Valmistaudu eeppiseen elämykseen Otaniemessä!',
     'event.telegram.title': 'Pysy ajan tasalla!',
     'event.telegram.text': 'Muista liittyä',
     'event.telegram.channel': 'Telegram-infokanavalle',
@@ -41,6 +41,9 @@ const translations = {
     
     // Timetable
     'timetable.title': 'AIKATAULU',
+    'timetable.placeholder.friday': 'Kenties jotain',
+    'timetable.placeholder.saturday': 'Eiköhän me pari juttua keksitä',
+    'timetable.placeholder.sunday': 'Hyvästit :(',
     'timetable.friday': 'Perjantai 13.3.',
     'timetable.friday.gala': 'Titeenigaala',
     'timetable.friday.afterparty': 'Jatkot',
@@ -91,7 +94,7 @@ const translations = {
     'event.title': 'EVENT INFO',
     'event.date': 'Date',
     'event.location': 'Location',
-    'event.description': 'Get ready for an epic experience in Otaniemi! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    'event.description': 'Get ready for an epic experience in Otaniemi!',
     'event.telegram.title': 'Stay Updated!',
     'event.telegram.text': 'Remember to join the',
     'event.telegram.channel': 'Telegram info channel',
@@ -99,6 +102,9 @@ const translations = {
     
     // Timetable
     'timetable.title': 'TIMETABLE',
+    'timetable.placeholder.friday': 'Perhaps something',
+    'timetable.placeholder.saturday': 'We\'ll figure out a thing or two',
+    'timetable.placeholder.sunday': 'Goodbyes :(',
     'timetable.friday': 'Friday 13.3.',
     'timetable.friday.gala': 'Titeeni Gala',
     'timetable.friday.afterparty': 'Afterparty',

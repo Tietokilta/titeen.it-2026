@@ -13,12 +13,12 @@ export function Map() {
     },
     { 
       nameKey: 'locations.smokki',
-      address: 'Jämeräntaival 3',
+      address: 'Jämeräntaival 4',
       mapUrl: 'https://www.google.com/maps/search/?api=1&query=Smökki+Otaniemi'
     },
     { 
       nameKey: 'locations.rantasauna',
-      address: 'Otaranta 2',
+      address: 'Vastaranta 1',
       mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rantasauna+Otaniemi'
     },
     { 
@@ -30,6 +30,11 @@ export function Map() {
       nameKey: 'locations.tietotekniikantalo',
       address: 'Konemiehentie 2',
       mapUrl: 'https://www.google.com/maps/search/?api=1&query=Tietotekniikantalo+Otaniemi'
+    },
+    {
+      nameKey: 'BMK',
+      address: 'Betonimiehenkuja 3',
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Betomiehenkuja+3+Otaniemi"
     },
   ];
 
@@ -69,7 +74,7 @@ export function Map() {
                         WebkitHyphens: 'auto',
                         msHyphens: 'auto',
                         overflowWrap: 'break-word', // fallback if hyphenation dictionary missing
-                        wordBreak: 'normal',
+                        wordBreak: 'break-word',
                       }}
                     >
                       {t(location.nameKey)}
@@ -93,7 +98,7 @@ export function Map() {
           <div className="relative border-4 border-[#ffd700] neon-box overflow-hidden bg-[#0f3460]">
             <div className="aspect-video w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15901.846739285593!2d24.81745!3d60.18622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df5859ce52be7%3A0x400b551554bc8f0!2sOtaniemi%2C%20Espoo%2C%20Finland!5e0!3m2!1sen!2s!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7180.919355543415!2d24.819784075374535!3d60.184149369728715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df5ed5c13c5f3%3A0x2600b5523c18ef71!2sOtaniemi%2C%2002150%20Espoo!5e1!3m2!1sfi!2sfi!4v1767816785391!5m2!1sfi!2sfi"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
