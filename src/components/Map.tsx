@@ -91,8 +91,8 @@ const createIcon = (iconUrl: string, bgColor: string) => L.divIcon({
     </div>
   `,
   iconSize: [32, 32],
-  iconAnchor: [16, 16],
-  popupAnchor: [0, -16],
+  iconAnchor: [20, 20],
+  popupAnchor: [0, -20],
 });
 
 export function Map() {
