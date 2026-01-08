@@ -4,6 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
+    base: "./", // github pages may be in / or /<repo>/ so use relative paths
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
