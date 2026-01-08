@@ -5,7 +5,7 @@ import partyIconUrl from 'icon:asset/party.png';
 import { motion } from 'motion/react';
 import { MapPin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useEffect, useRef } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -18,28 +18,28 @@ const sleeping_locations = [
     nameKey: 'locations.otakaari20',
     address: 'Otakaari 20',
     coords: [60.1869446, 24.8337694],
-    // mapUrl: 'https://www.google.com/maps/search/?api=1&query=Otakaari+20+Espoo',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Otakaari+20+Espoo',
     icon: sleepIcon
   },
   { 
     nameKey: 'locations.rantasauna',
     address: 'Vastaranta 1',
     coords: [60.1882126, 24.8392378],
-    // mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rantasauna+Otaniemi',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rantasauna+Otaniemi',
     icon: sleepIcon
   },
   { 
     nameKey: 'locations.heymo',
     address: 'Miestentie 5',
     coords: [60.1788997, 24.830096],
-    // mapUrl: 'https://www.google.com/maps/search/?api=1&query=Hotelli+Heymo+1+Espoo',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Hotelli+Heymo+1+Espoo',
     icon: sleepIcon
   },
   { 
     nameKey: 'locations.forenom',
     address: 'Miestentie 5',
     coords: [60.1794569, 24.8284948],
-    // mapUrl: 'https://www.google.com/maps/search/?api=1&query=Forenom+Hostel+Otaniemi',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Forenom+Hostel+Otaniemi',
     icon: sleepIcon
   },
 ];
@@ -75,6 +75,8 @@ const important_locations = [
   },
 ];
 
+const allLocations = [...important_locations, ...sleeping_locations];
+
 const createIcon = (iconUrl: string, bgColor: string) => L.divIcon({
   className: '',
   html: `
@@ -91,53 +93,12 @@ const createIcon = (iconUrl: string, bgColor: string) => L.divIcon({
     </div>
   `,
   iconSize: [32, 32],
-  iconAnchor: [16, 16],
-  popupAnchor: [0, -16],
+  iconAnchor: [20, 20],
+  popupAnchor: [0, -20],
 });
 
 export function Map() {
   const { t, language } = useLanguage();
-  const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<L.Map | null>(null);
-  const markersRef = useRef<{ marker: L.Marker; nameKey: string }[]>([]);
-
-  useEffect(() => {
-    if (!mapRef.current || mapInstanceRef.current) return;
-
-    const map = L.map(mapRef.current);
-    mapInstanceRef.current = map;
-    const bounds = L.latLngBounds([]);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors',
-      maxZoom: 19,
-    }).addTo(map);
-
-    [...sleeping_locations, ...important_locations].forEach(loc => {
-      const marker = L.marker(loc.coords as L.LatLngExpression, { icon: createIcon(loc.icon.url, loc.icon.bgColor) })
-        .addTo(map)
-        .bindPopup(t(loc.nameKey));
-
-      markersRef.current.push({ marker, nameKey: loc.nameKey });
-      bounds.extend(loc.coords as L.LatLngExpression);
-    });
-
-    map.fitBounds(bounds, { padding: [50, 50] });
-
-
-    return () => {
-      map.remove();
-      mapInstanceRef.current = null;
-      markersRef.current = [];
-    };
-  }, []);
-
-  // Update popup content when language changes
-  useEffect(() => {
-    markersRef.current.forEach(({ marker, nameKey }) => {
-      marker.setPopupContent(t(nameKey));
-    });
-  }, [t]);
 
   return (
     <section id="map" className="py-20 px-4 scroll-mt-16 md:scroll-mt-24">
@@ -198,7 +159,36 @@ export function Map() {
           {/* Map */}
           <div className="relative border-4 border-[#ffd700] neon-box overflow-hidden bg-[#0f3460]">
             <div className="aspect-square sm:aspect-video w-full">
-              <div ref={mapRef} className="w-full h-full z-0" />
+              <MapContainer
+                bounds={allLocations.map(loc => loc.coords as [number, number])}
+                boundsOptions={{ padding: [50, 50] }}
+                className="w-full h-full z-0"
+              >
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution="© OpenStreetMap contributors"
+                  maxZoom={19}
+                />
+                {allLocations.map((loc, index) => (
+                  <Marker 
+                    key={index}
+                    position={loc.coords as [number, number]}
+                    icon={createIcon(loc.icon.url, loc.icon.bgColor)}
+                  >
+                    <Popup>
+                      <a
+                        href={loc.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline text-center block"
+                        style={{ color: '#0f3460' }}
+                      >
+                        {t(loc.nameKey)}
+                      </a>
+                    </Popup>
+                  </Marker>
+                ))}
+              </MapContainer>
             </div>
           </div>
         </motion.div>
