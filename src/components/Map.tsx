@@ -1,42 +1,143 @@
+import sleepIconUrl from 'icon:asset/krooh_mimimi.png';
+import uniIconUrl from 'icon:asset/lipasto.png';
+import partyIconUrl from 'icon:asset/party.png';
+
 import { motion } from 'motion/react';
 import { MapPin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useEffect, useRef } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+
+const sleepIcon = { url: sleepIconUrl, bgColor: '#4ecdc4' };
+const uniIcon = { url: uniIconUrl, bgColor: '#ffd700' };
+const partyIcon = { url: partyIconUrl, bgColor: '#ff6b9d' };
+
+const sleeping_locations = [
+  { 
+    nameKey: 'locations.otakaari20',
+    address: 'Otakaari 20',
+    coords: [60.1869446, 24.8337694],
+    // mapUrl: 'https://www.google.com/maps/search/?api=1&query=Otakaari+20+Espoo',
+    icon: sleepIcon
+  },
+  { 
+    nameKey: 'locations.rantasauna',
+    address: 'Vastaranta 1',
+    coords: [60.1882126, 24.8392378],
+    // mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rantasauna+Otaniemi',
+    icon: sleepIcon
+  },
+  { 
+    nameKey: 'locations.heymo',
+    address: 'Miestentie 5',
+    coords: [60.1788997, 24.830096],
+    // mapUrl: 'https://www.google.com/maps/search/?api=1&query=Hotelli+Heymo+1+Espoo',
+    icon: sleepIcon
+  },
+  { 
+    nameKey: 'locations.forenom',
+    address: 'Miestentie 5',
+    coords: [60.1794569, 24.8284948],
+    // mapUrl: 'https://www.google.com/maps/search/?api=1&query=Forenom+Hostel+Otaniemi',
+    icon: sleepIcon
+  },
+];
+
+const important_locations = [
+  { 
+    nameKey: 'locations.kandidaattikeskus',
+    address: 'Otakaari 1',
+    coords: [60.1859838, 24.8271078],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Kandidaattikeskus+Otaniemi',
+    icon: uniIcon
+  },
+  { 
+    nameKey: 'locations.smokki',
+    address: 'Jämeräntaival 4',
+    coords: [60.1883511, 24.8365035],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Smökki+Otaniemi',
+    icon: partyIcon
+  },
+  {
+    nameKey: 'BMK',
+    address: 'Betonimiehenkuja 3',
+    coords: [60.1805879, 24.8323172],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Betonimiehenkuja+3+Otaniemi',
+    icon: partyIcon
+  },
+  { 
+    nameKey: 'locations.tietotekniikantalo',
+    address: 'Konemiehentie 2',
+    coords: [60.1869638, 24.8213831],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Konemiehentie+2+Espoo',
+    icon: uniIcon
+  },
+];
+
+const createIcon = (iconUrl: string, bgColor: string) => L.divIcon({
+  className: '',
+  html: `
+    <div style="
+      width: 40px;
+      height: 40px;
+      background: ${bgColor};
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    ">
+      <img src="${iconUrl}" style="width: 24px; height: auto;" />
+    </div>
+  `,
+  iconSize: [32, 32],
+  iconAnchor: [16, 16],
+  popupAnchor: [0, -16],
+});
 
 export function Map() {
   const { t, language } = useLanguage();
+  const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<L.Map | null>(null);
+  const markersRef = useRef<{ marker: L.Marker; nameKey: string }[]>([]);
 
-  const locations = [
-    { 
-      nameKey: 'locations.kandidaattikeskus',
-      address: 'Otakaari 1',
-      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Kandidaattikeskus+Otaniemi'
-    },
-    { 
-      nameKey: 'locations.smokki',
-      address: 'Jämeräntaival 4',
-      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Smökki+Otaniemi'
-    },
-    {
-      nameKey: 'BMK',
-      address: 'Betonimiehenkuja 3',
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Betomiehenkuja+3+Otaniemi"
-    },
-    { 
-      nameKey: 'locations.tietotekniikantalo',
-      address: 'Konemiehentie 2',
-      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Tietotekniikantalo+Otaniemi'
-    },
-    { 
-      nameKey: 'locations.otakaari20',
-      address: 'Otakaari 20',
-      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Otakaari+20+Espoo'
-    },
-    { 
-      nameKey: 'locations.rantasauna',
-      address: 'Vastaranta 1',
-      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rantasauna+Otaniemi'
-    },
-  ];
+  useEffect(() => {
+    if (!mapRef.current || mapInstanceRef.current) return;
+
+    const map = L.map(mapRef.current);
+    mapInstanceRef.current = map;
+    const bounds = L.latLngBounds([]);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19,
+    }).addTo(map);
+
+    [...sleeping_locations, ...important_locations].forEach(loc => {
+      const marker = L.marker(loc.coords as L.LatLngExpression, { icon: createIcon(loc.icon.url, loc.icon.bgColor) })
+        .addTo(map)
+        .bindPopup(t(loc.nameKey));
+
+      markersRef.current.push({ marker, nameKey: loc.nameKey });
+      bounds.extend(loc.coords as L.LatLngExpression);
+    });
+
+    map.fitBounds(bounds, { padding: [50, 50] });
+
+
+    return () => {
+      map.remove();
+      mapInstanceRef.current = null;
+      markersRef.current = [];
+    };
+  }, []);
+
+  // Update popup content when language changes
+  useEffect(() => {
+    markersRef.current.forEach(({ marker, nameKey }) => {
+      marker.setPopupContent(t(nameKey));
+    });
+  }, [t]);
 
   return (
     <section id="map" className="py-20 px-4 scroll-mt-16 md:scroll-mt-24">
@@ -51,8 +152,8 @@ export function Map() {
             {t('locations.title')}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
-            {locations.map((location, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto">
+            {important_locations.map((location, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -97,16 +198,7 @@ export function Map() {
           {/* Map */}
           <div className="relative border-4 border-[#ffd700] neon-box overflow-hidden bg-[#0f3460]">
             <div className="aspect-square sm:aspect-video w-full">
-              <iframe
-                src="https://www.google.com/maps/d/u/0/embed?mid=1z5CiR51QzgsRa1p9Ipf8tzZP9nnffyg&ehbc=2E312F" 
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-              />
+              <div ref={mapRef} className="w-full h-full z-0" />
             </div>
           </div>
         </motion.div>

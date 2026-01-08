@@ -59,6 +59,8 @@ const translations = {
     // Locations
     'locations.title': 'SIJAINNIT',
     'locations.viewMap': 'Näytä kartalla →',
+    'locations.heymo': 'Hotelli Heymo',
+    'locations.forenom': 'Forenom Hostel',
     'locations.kandidaattikeskus': 'Kandidaattikeskus',
     'locations.smokki': 'Smökki',
     'locations.rantasauna': 'Rantasauna',
@@ -120,6 +122,8 @@ const translations = {
     // Locations
     'locations.title': 'LOCATIONS',
     'locations.viewMap': 'View on Map →',
+    'locations.heymo': 'Hotel Heymo',
+    'locations.forenom': 'Forenom Hostel',
     'locations.kandidaattikeskus': 'Undergraduate Center',
     'locations.smokki': 'Smökki',
     'locations.rantasauna': 'Rantasauna',
