@@ -88,7 +88,7 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-[#4ecdc4] tracking-wider hover:text-[#ff6b9d] transition-colors"
+                className="text-[#4ecdc4] font-bold tracking-wider hover:text-[#ff6b9d] transition-colors"
               >
                 {item.label}
               </button>
@@ -98,7 +98,7 @@ export function Navigation() {
             <div className="flex items-center gap-2 ml-16">
               <button
                 onClick={() => setLanguage('fi')}
-                className={`px-3 py-1 transition-colors ${
+                className={`px-3 py-1 transition-colors font-bold ${
                   language === 'fi' 
                     ? 'text-[#ff6b9d]' 
                     : 'text-[#4ecdc4] hover:text-[#ff6b9d]'
@@ -109,7 +109,7 @@ export function Navigation() {
               <span className="text-[#4ecdc4]">|</span>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-3 py-1 transition-colors ${
+                className={`px-3 py-1 transition-colors font-bold ${
                   language === 'en' 
                     ? 'text-[#ff6b9d]' 
                     : 'text-[#4ecdc4] hover:text-[#ff6b9d]'
@@ -134,7 +134,7 @@ export function Navigation() {
             <div className="flex items-center justify-center gap-2 px-6 py-4 border-b border-[#ff6b9d]/20">
               <button
                 onClick={() => setLanguage('fi')}
-                className={`px-4 py-2 transition-colors ${
+                className={`px-4 py-2 transition-colors font-bold ${
                   language === 'fi' 
                     ? 'text-[#ff6b9d]' 
                     : 'text-[#4ecdc4] hover:text-[#ff6b9d]'
@@ -145,7 +145,7 @@ export function Navigation() {
               <span className="text-[#4ecdc4]">|</span>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-4 py-2 transition-colors ${
+                className={`px-4 py-2 transition-colors font-bold ${
                   language === 'en' 
                     ? 'text-[#ff6b9d]' 
                     : 'text-[#4ecdc4] hover:text-[#ff6b9d]'
@@ -159,7 +159,7 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-6 py-4 text-[#4ecdc4] tracking-wider hover:bg-[#0f3460] hover:text-[#ff6b9d] transition-colors border-b border-[#ff6b9d]/20 last:border-b-0"
+                className="block w-full text-left px-6 py-4 text-[#4ecdc4] font-bold tracking-wider hover:bg-[#0f3460] hover:text-[#ff6b9d] transition-colors border-b border-[#ff6b9d]/20 last:border-b-0"
               >
                 {item.label}
               </button>

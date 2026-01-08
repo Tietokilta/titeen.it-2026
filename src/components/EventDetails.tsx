@@ -32,7 +32,7 @@ export function EventDetails() {
               <div className="flex items-start gap-4">
                 <Calendar className="w-8 h-8 text-[#ff6b9d] flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-[#ff6b9d] text-base sm:text-xl mb-2">
+                  <p className="text-[#ff6b9d] text-base font-bold sm:text-xl mb-2">
                     {t('event.date')}
                   </p>
                   <p className="text-white text-lg sm:text-2xl">
@@ -44,7 +44,7 @@ export function EventDetails() {
               <div className="flex items-start gap-4">
                 <MapPin className="w-8 h-8 text-[#ff6b9d] flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-[#ff6b9d] text-base sm:text-xl mb-2">
+                  <p className="text-[#ff6b9d] text-base font-bold sm:text-xl mb-2">
                     {t('event.location')}
                   </p>
                   <p className="text-white text-lg sm:text-2xl">
@@ -63,7 +63,7 @@ export function EventDetails() {
             <div className="flex items-start gap-4">
               <MessageCircle className="w-8 h-8 text-[#ff6b9d] flex-shrink-0 mt-1" />
               <div>
-                <p className="text-[#ff6b9d] text-xl mb-2">
+                <p className="text-[#ff6b9d] text-xl font-bold mb-2">
                   {t('event.telegram.title')}
                 </p>
                 <p className="text-white">
@@ -71,7 +71,7 @@ export function EventDetails() {
                     href="https://t.me/titeenientaistot" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-[#ff6b9d] hover:underline"
+                    className="text-[#ff6b9d] font-bold hover:underline"
                   >
                     {t('event.telegram.channel')}
                   </a> {t('event.telegram.rest')}

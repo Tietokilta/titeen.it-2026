@@ -16,10 +16,15 @@ export function Map() {
       address: 'Jämeräntaival 4',
       mapUrl: 'https://www.google.com/maps/search/?api=1&query=Smökki+Otaniemi'
     },
+    {
+      nameKey: 'BMK',
+      address: 'Betonimiehenkuja 3',
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Betomiehenkuja+3+Otaniemi"
+    },
     { 
-      nameKey: 'locations.rantasauna',
-      address: 'Vastaranta 1',
-      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rantasauna+Otaniemi'
+      nameKey: 'locations.tietotekniikantalo',
+      address: 'Konemiehentie 2',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Tietotekniikantalo+Otaniemi'
     },
     { 
       nameKey: 'locations.otakaari20',
@@ -27,14 +32,9 @@ export function Map() {
       mapUrl: 'https://www.google.com/maps/search/?api=1&query=Otakaari+20+Espoo'
     },
     { 
-      nameKey: 'locations.tietotekniikantalo',
-      address: 'Konemiehentie 2',
-      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Tietotekniikantalo+Otaniemi'
-    },
-    {
-      nameKey: 'BMK',
-      address: 'Betonimiehenkuja 3',
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Betomiehenkuja+3+Otaniemi"
+      nameKey: 'locations.rantasauna',
+      address: 'Vastaranta 1',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rantasauna+Otaniemi'
     },
   ];
 
@@ -86,7 +86,7 @@ export function Map() {
                   href={location.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 text-[#ffd700] hover:text-[#ff6b9d] transition-colors"
+                  className="inline-block mt-2 text-[#ffd700] font-bold hover:text-[#ff6b9d] transition-colors"
                 >
                   {t('locations.viewMap')}
                 </a>
@@ -96,9 +96,9 @@ export function Map() {
 
           {/* Map */}
           <div className="relative border-4 border-[#ffd700] neon-box overflow-hidden bg-[#0f3460]">
-            <div className="aspect-video w-full">
+            <div className="aspect-square sm:aspect-video w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7180.919355543415!2d24.819784075374535!3d60.184149369728715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df5ed5c13c5f3%3A0x2600b5523c18ef71!2sOtaniemi%2C%2002150%20Espoo!5e1!3m2!1sfi!2sfi!4v1767816785391!5m2!1sfi!2sfi"
+                src="https://www.google.com/maps/d/u/0/embed?mid=1z5CiR51QzgsRa1p9Ipf8tzZP9nnffyg&ehbc=2E312F" 
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

@@ -54,7 +54,7 @@ export function Timetable() {
               <div className="space-y-4">
                 {schedule.friday.map((item, index) => (
                   <div key={index} className="flex gap-4 items-start">
-                    <span className="text-[#4ecdc4] min-w-[60px]">{item.time}</span>
+                    <span className="text-[#4ecdc4] font-bold min-w-[60px]">{item.time}</span>
                     <span className="text-white">{item.event}</span>
                   </div>
                 ))}
@@ -69,7 +69,7 @@ export function Timetable() {
               <div className="space-y-4">
                 {schedule.saturday.map((item, index) => (
                   <div key={index} className="flex gap-4 items-start">
-                    <span className="text-[#4ecdc4] min-w-[60px]">{item.time}</span>
+                    <span className="text-[#4ecdc4] font-bold min-w-[60px]">{item.time}</span>
                     <span className="text-white">{item.event}</span>
                   </div>
                 ))}
@@ -84,7 +84,7 @@ export function Timetable() {
               <div className="space-y-4">
                 {schedule.sunday.map((item, index) => (
                   <div key={index} className="flex gap-4 items-start">
-                    <span className="text-[#4ecdc4] min-w-[60px]">{item.time}</span>
+                    <span className="text-[#4ecdc4] font-bold min-w-[60px]">{item.time}</span>
                     <span className="text-white">{item.event}</span>
                   </div>
                 ))}

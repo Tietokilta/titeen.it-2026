@@ -18,7 +18,7 @@ const translations = {
     
     // Hero
     'hero.date': '13.-15.3.2026',
-    'hero.location': 'Otaniemi, Espoo',
+    'hero.location': 'Otaniemi',
     'hero.startGame': 'ALOITA PELI',
     'hero.closeGame': 'SULJE PELI',
     
@@ -30,7 +30,7 @@ const translations = {
     'countdown.seconds': 'SEKUNTIA',
     
     // Event Details
-    'event.title': 'TAPAHTUMAN TIEDOT',
+    'event.title': 'TAPAHTUMA',
     'event.date': 'Päivämäärä',
     'event.location': 'Sijainti',
     'event.description': 'Valmistaudu eeppiseen elämykseen Otaniemessä!',
@@ -79,7 +79,7 @@ const translations = {
     
     // Hero
     'hero.date': '13.-15.3.2026',
-    'hero.location': 'Otaniemi, Espoo',
+    'hero.location': 'Otaniemi',
     'hero.startGame': 'START GAME',
     'hero.closeGame': 'CLOSE GAME',
     
@@ -91,7 +91,7 @@ const translations = {
     'countdown.seconds': 'SECONDS',
     
     // Event Details
-    'event.title': 'EVENT INFO',
+    'event.title': 'EVENT',
     'event.date': 'Date',
     'event.location': 'Location',
     'event.description': 'Get ready for an epic experience in Otaniemi!',

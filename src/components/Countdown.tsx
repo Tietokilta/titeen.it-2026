@@ -38,23 +38,33 @@ export function Countdown() {
   ];
 
   return (
-    <div className="flex justify-center items-center gap-2 sm:gap-4 md:gap-8">
-      {timeUnits.map((unit, index) => (
-        <motion.div
-          key={unit.label}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-          className="text-center"
-        >
-          <div className="text-3xl sm:text-5xl md:text-6xl text-[#ffd700] mb-1 sm:mb-2 retro-number">
-            {String(unit.value).padStart(2, '0')}
-          </div>
-          <div className="text-[#ff6b9d] tracking-widest text-sm sm:text-sm md:text-base">
-            {unit.label}
-          </div>
-        </motion.div>
-      ))}
-    </div>
+    // <div className="flex justify-center items-center gap-2 sm:gap-8 md:gap-12">
+    <table className="table-fixed mx-auto">
+      <col className="w-1/4" />
+      <col className="w-1/4" />
+      <col className="w-1/4" />
+      <col className="w-1/4" />
+      <tr>
+        {timeUnits.map((unit, index) => (
+          <td>
+            <motion.div
+              key={unit.label}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+              className="text-center"
+            >
+              <div className="text-7xl sm:text-8xl md:text-8xl text-[#ffd700] px-2 sm:px-4 md:px-6 mb-1 sm:mb-2 retro-number">
+                {String(unit.value).padStart(2, '0')}
+              </div>
+              <div className="text-[#ff6b9d] tracking-widest text-md font-bold sm:text-md md:text-base">
+                {unit.label}
+              </div>
+            </motion.div>
+          </td>
+        ))}
+      </tr>
+    </table>
+    // </div>
   );
 }
