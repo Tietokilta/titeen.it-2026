@@ -13,12 +13,12 @@ export function Hero() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-20 logo-bounce"
+          className="relative mb-20 logo-bounce z-20"
         >
           <img 
             src={logoImage} 
             alt="TIITEENIT" 
-            className="mx-auto max-w-2xl w-full h-auto pixel-perfect z-20"
+            className="mx-auto max-w-2xl w-full h-auto pixel-perfect"
           />
         </motion.div>
 
