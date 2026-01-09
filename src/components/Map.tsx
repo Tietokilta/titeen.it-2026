@@ -157,12 +157,12 @@ export function Map() {
           </div>
 
           {/* Map */}
-          <div className="relative border-4 border-[#ffd700] neon-box overflow-hidden bg-[#0f3460]">
+          <div className="relative border-4 border-[#ffd700] neon-box overflow-hidden bg-[#0f3460] isolate z-10">
             <div className="aspect-square sm:aspect-video w-full">
               <MapContainer
                 bounds={allLocations.map(loc => loc.coords as [number, number])}
                 boundsOptions={{ padding: [50, 50] }}
-                className="w-full h-full z-0"
+                className="w-full h-full"
               >
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

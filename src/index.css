@@ -1354,7 +1354,7 @@
 
 .scanlines {
   pointer-events: none;
-  z-index: 50;
+  z-index: 0;
   background: linear-gradient(#0000 50%, #0000001a 51%) 0 0 / 100% 4px;
   animation: 8s linear infinite scanline;
   position: fixed;
