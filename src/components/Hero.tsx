@@ -8,7 +8,7 @@ export function Hero() {
       {/* Animated grid background */}
       <div className="perspective-grid opacity-20" />
       
-      <div className="relative z-10 max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ export function Hero() {
           <img 
             src={logoImage} 
             alt="TIITEENIT" 
-            className="mx-auto max-w-2xl w-full h-auto pixel-perfect"
+            className="mx-auto max-w-2xl w-full h-auto pixel-perfect z-20"
           />
         </motion.div>
 

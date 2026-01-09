@@ -39,7 +39,10 @@ export function Countdown() {
 
   return (
     // <div className="flex justify-center items-center gap-2 sm:gap-8 md:gap-12">
-    <table className="table-fixed mx-auto">
+    <table
+      className="table-fixed mx-auto"
+      style={{ transform: 'scale(0.9)' }}
+    >
       <col className="w-1/4" />
       <col className="w-1/4" />
       <col className="w-1/4" />
@@ -57,7 +60,10 @@ export function Countdown() {
               <div className="text-7xl sm:text-8xl md:text-8xl text-[#ffd700] px-2 sm:px-4 md:px-6 mb-1 sm:mb-2 retro-number">
                 {String(unit.value).padStart(2, '0')}
               </div>
-              <div className="text-[#ff6b9d] tracking-widest text-md font-bold sm:text-md md:text-base">
+              <div
+                className="text-[#ff6b9d] tracking-widest text-md text-xxs font-bold sm:text-md md:text-base"
+                style={{ transform: 'scale(0.90)' }}
+              >
                 {unit.label}
               </div>
             </motion.div>

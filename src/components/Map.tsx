@@ -113,7 +113,7 @@ export function Map() {
             {t('locations.title')}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto relative z-20">
             {important_locations.map((location, index) => (
               <motion.div
                 key={index}
@@ -157,7 +157,7 @@ export function Map() {
           </div>
 
           {/* Map */}
-          <div className="relative border-4 border-[#ffd700] neon-box overflow-hidden bg-[#0f3460] isolate z-10">
+          <div className="relative border-4 border-[#ffd700] neon-box overflow-hidden bg-[#0f3460] isolate z-20">
             <div className="aspect-square sm:aspect-video w-full">
               <MapContainer
                 bounds={allLocations.map(loc => loc.coords as [number, number])}

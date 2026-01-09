@@ -433,8 +433,16 @@
     z-index: 0;
   }
 
+  .z-5 {
+    z-index: 5;
+  }
+
   .z-10 {
     z-index: 10;
+  }
+
+  .z-20 {
+    z-index: 20;
   }
 
   .z-40 {
@@ -625,6 +633,10 @@
 
   .flex-1 {
     flex: 1;
+  }
+
+  .flex-col {
+    flex-direction: column;
   }
 
   .flex-shrink-0 {
@@ -1354,7 +1366,7 @@
 
 .scanlines {
   pointer-events: none;
-  z-index: 0;
+  z-index: 10;
   background: linear-gradient(#0000 50%, #0000001a 51%) 0 0 / 100% 4px;
   animation: 8s linear infinite scanline;
   position: fixed;
@@ -1415,16 +1427,19 @@
 .neon-text {
   text-shadow: 0 0 5px #ff6b9dcc, 0 0 10px #ff6b9d99, 0 0 15px #ff6b9d66;
   animation: 5s infinite alternate flicker;
+  z-index: 5;
 }
 
 .neon-text-gold {
   text-shadow: 0 0 5px #ffd700cc, 0 0 10px #ffd70099, 0 0 15px #ffd70066;
   animation: 5s infinite alternate flicker;
+  z-index: 5;
 }
 
 .neon-text-cyan {
   text-shadow: 0 0 5px #4ecdc4cc, 0 0 10px #4ecdc499, 0 0 15px #4ecdc466;
   animation: 5s infinite alternate flicker;
+  z-index: 5;
 }
 
 @keyframes flicker {
@@ -1439,10 +1454,14 @@
 
 .neon-box {
   box-shadow: 0 0 #ff6b9d80, inset 0 0 #ff6b9d1a;
+  position: relative;
+  z-index: 20;
 }
 
 .neon-box-gold {
   box-shadow: 0 0 #ffd70080, inset 0 0 #ffd7001a;
+  position: relative;
+  z-index: 20;
 }
 
 .retro-title {
@@ -1454,6 +1473,9 @@
 .retro-number {
   font-variant-numeric: tabular-nums;
   font-family: Impact, Anton, Arial Black, sans-serif;
+  text-shadow: 0 0 5px #ffd700cc, 0 0 10px #ffd70099, 0 0 15px #ffd70066;
+  position: relative;
+  z-index: 5;
 }
 
 .retro-button {

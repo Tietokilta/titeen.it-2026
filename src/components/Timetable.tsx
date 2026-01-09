@@ -45,7 +45,7 @@ export function Timetable() {
             {t('timetable.title')}
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 relative z-20">
             {/* Friday */}
             <div className="bg-[#16213e]/80 backdrop-blur-sm border-4 border-[#4ecdc4] p-6">
               <h4 className="text-lg sm:text-xl md:text-2xl text-[#4ecdc4] mb-6 text-center tracking-wider">
