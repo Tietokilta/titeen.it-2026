@@ -49,7 +49,8 @@ export function Navigation() {
     { label: t('nav.main'), id: 'hero' },
     { label: t('nav.info'), id: 'info' },
     { label: t('nav.timetable'), id: 'timetable' },
-    { label: t('nav.map'), id: 'map' }
+    { label: t('nav.map'), id: 'map' },
+    { label: t('nav.safety'), id: 'safety' }
   ];
 
   return (

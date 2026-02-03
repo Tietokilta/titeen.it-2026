@@ -816,6 +816,10 @@
     padding: calc(var(--spacing) * 6);
   }
 
+  .p-10 {
+    padding: calc(var(--spacing) * 10);
+  }
+
   .p-12 {
     padding: calc(var(--spacing) * 12);
   }
@@ -1816,3 +1820,56 @@
   inherits: false;
   initial-value: 1;
 }
+
+/* Custom border utilities for accordion items */
+.border-l-4 {
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.border-r-4 {
+  border-right-width: 4px;
+  border-right-style: solid;
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+}
+
+/* Custom margin utilities */
+.mt-0\.5 {
+  margin-top: 0.125rem;
+}
+
+.mt-0\.75 {
+  margin-top: 0.1875rem;
+}
+
+/* Smooth accordion animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+[data-slot="accordion-content"][data-state="open"] {
+  animation: accordion-down 0.4s ease-out;
+}
+
+[data-slot="accordion-content"][data-state="closed"] {
+  animation: accordion-up 0.4s ease-in;
+}
+

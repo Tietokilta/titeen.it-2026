@@ -1,6 +1,7 @@
 import { Hero } from './components/Hero';
 import { EventDetails } from './components/EventDetails';
 import { Timetable } from './components/Timetable';
+import { Safety } from './components/Safety';
 import { Footer } from './components/Footer';
 import { Navigation } from './components/Navigation';
 import { Map } from './components/Map';
@@ -18,6 +19,7 @@ export default function App() {
         <EventDetails />
         <Timetable />
         <Map />
+        <Safety />
         <Footer />
       </div>
     </LanguageProvider>
