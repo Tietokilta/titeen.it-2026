@@ -77,7 +77,7 @@ export function Safety() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           {/* General Guidelines */}
-          <div className="flex flex-col gap-6 items-start bg-[#16213e] border-4 border-[#ff6b9d] p-4 sm:p-6 md:p-10 neon-box">
+          <div className="flex flex-col gap-6 items-start bg-[#16213e] border-4 border-[#ff6b9d] p-2 sm:p-6 md:p-10 neon-box">
             <h3 className="text-xl md:text-2xl font-bold text-[#ff6b9d] tracking-wider">
               {t('safety.guidelinesTitle')}
             </h3>
@@ -114,13 +114,13 @@ export function Safety() {
               <AccordionItem
                 key={id}
                 value={id}
-                className="flex flex-col gap-6 border-l-4 border-r-4 border-b-4 border-[#ff6b9d] bg-[#16213e] rounded-lg neon-box p-4 sm:p-6 md:p-10"
+                className="flex flex-col border-l-4 border-r-4 border-b-4 border-[#ff6b9d] bg-[#16213e] rounded-lg neon-box p-2 sm:p-6 md:p-10"
               >
-                <AccordionTrigger className="text-white font-bold text-xl md:text-2xl hover:bg-[#0f3460] hover:no-underline transition-colors group [&_svg]:hidden justify-between">
-                  <div className="flex items-start text-xl md:text-2xl font-bold text-[#ff6b9d] tracking-wider flex-1 min-w-0">
+                <AccordionTrigger className="text-white font-bold md:text-2xl hover:bg-[#0f3460] hover:no-underline transition-colors group [&_svg]:hidden justify-between">
+                  <div className="flex items-center md:text-2xl font-bold text-[#ff6b9d] tracking-wider flex-1 min-w-0">
                     <Heart className="w-8 h-8 text-[#ff6b9d] group-hover:scale-110 transition-transform flex-shrink-0" />
                     <span 
-                      className="tracking-wider text-left px-4"
+                      className="tracking-wider text-left px-2 md:px-4"
                       style={{
                         hyphens: 'auto',
                         WebkitHyphens: 'auto',
