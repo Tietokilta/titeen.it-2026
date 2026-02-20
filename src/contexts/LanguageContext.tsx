@@ -133,7 +133,7 @@ const translations = {
     'event.telegram.channel': 'Telegram info channel',
     'event.telegram.rest': 'for latest updates, announcements, and event details.',
     'event.saturdayTickets.title': 'Saturday tickets!',
-    'event.saturdayTickets.text': 'Longing for the battlefield, but only tantamount to one day\'s worth? We offer the possibility to only participate in the program of saturday the 14th of March. More info and signup can be found ',
+    'event.saturdayTickets.text': 'Longing for the battlefield, but only tantamount to one day\'s worth? We offer the possibility to only participate in the program of Saturday the 14th of March. More info and signup can be found ',
     'event.saturdayTickets.signup': 'here',
     'event.saturdayTickets.rest': '.',
     
