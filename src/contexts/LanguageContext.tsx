@@ -39,6 +39,10 @@ const translations = {
     'event.telegram.text': 'Muista liittyä',
     'event.telegram.channel': 'Telegram-infokanavalle',
     'event.telegram.rest': 'saadaksesi viimeisimmät päivitykset, ilmoitukset ja tapahtumatiedot.',
+    'event.saturdayTickets.title': 'Lauantain liput!',
+    'event.saturdayTickets.text': 'Halajatko sotatantereelle, mutta vain yhden päivän veroisesti? Tarjoamme mahdollisuuden osallistua myös ainoastaan lauantain 14.3. ohjelmaan. Lisää tietoa lipun sisällöstä ja itse ilmoittautuminen löytyvät ',
+    'event.saturdayTickets.signup': 'täältä',
+    'event.saturdayTickets.rest': '.',
     
     // Timetable
     'timetable.title': 'AIKATAULU',
@@ -128,6 +132,10 @@ const translations = {
     'event.telegram.text': 'Remember to join the',
     'event.telegram.channel': 'Telegram info channel',
     'event.telegram.rest': 'for latest updates, announcements, and event details.',
+    'event.saturdayTickets.title': 'Saturday tickets!',
+    'event.saturdayTickets.text': 'Longing for the battlefield, but only tantamount to one day\'s worth? We offer the possibility to only participate in the program of saturday the 14th of March. More info and signup can be found ',
+    'event.saturdayTickets.signup': 'here',
+    'event.saturdayTickets.rest': '.',
     
     // Timetable
     'timetable.title': 'TIMETABLE',

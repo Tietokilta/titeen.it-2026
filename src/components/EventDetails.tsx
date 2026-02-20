@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Calendar, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Calendar, MapPin, MessageCircle, Axe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function EventDetails() {
@@ -60,7 +60,7 @@ export function EventDetails() {
             </p>
             
             {/* Telegram Info */}
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-4 mb-4">
               <MessageCircle className="w-8 h-8 text-[#ff6b9d] flex-shrink-0 mt-1" />
               <div>
                 <p className="text-[#ff6b9d] text-xl font-bold mb-2">
@@ -75,6 +75,26 @@ export function EventDetails() {
                   >
                     {t('event.telegram.channel')}
                   </a> {t('event.telegram.rest')}
+                </p>
+              </div>
+            </div>
+
+            {/* Saturday Ticket Sale */}
+            <div className="flex items-start gap-4">
+              <Axe className="w-8 h-8 text-[#ff6b9d] flex-shrink-0 mt-1" />
+              <div>
+                <p className="text-[#ff6b9d] text-xl font-bold mb-2">
+                  {t('event.saturdayTickets.title')}
+                </p>
+                <p className="text-white">
+                  {t('event.saturdayTickets.text')} <a 
+                    href="https://ilmo.tietokilta.fi/events/titeenilauantai2026" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#ff6b9d] font-bold hover:underline"
+                  >
+                    {t('event.saturdayTickets.signup')}
+                  </a>{t('event.saturdayTickets.rest')}
                 </p>
               </div>
             </div>
