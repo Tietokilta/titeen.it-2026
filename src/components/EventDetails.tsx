@@ -2,8 +2,18 @@ import { motion } from 'motion/react';
 import { Calendar, MapPin, MessageCircle, Axe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
+import julkku from '../assets/julkku_oranssi.png';
+import tek from '../assets/tek.svg';
+import netlight from '../assets/netlight.svg';
+
 export function EventDetails() {
   const { t } = useLanguage();
+
+  const sponsors = [
+      { id: 1, name: 'Netlight', logo: netlight, url: 'https://www.netlight.com/' },
+      { id: 2, name: 'Julkku', logo: julkku, url: 'https://www.julkku.fi/' },
+      { id: 3, name: 'TEK', logo: tek, url: 'https://www.tek.fi/fi' },
+    ];
 
   return (
     <section id="info" className="py-20 px-4 scroll-mt-16 md:scroll-mt-24 relative">
@@ -101,7 +111,7 @@ export function EventDetails() {
           </div>
         </motion.div>
 
-        {/* Sponsors Section 
+        {/* Sponsors Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,18 +122,26 @@ export function EventDetails() {
           <h3 className="text-center text-2xl sm:text-3xl md:text-4xl mb-8 text-[#ff6b9d] retro-title neon-text">
             {t('footer.sponsors')}
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center max-w-2xl mx-auto">
-            {[1, 2, 3].map((index) => (
-              <div
-                key={index}
-                className={`text-4xl sm:text-5xl text-[#ff6b9d] tracking-wider opacity-50 hover:opacity-100 transition-opacity ${index === 3 ? 'col-span-2 md:col-span-1' : ''}`}
+          <div className="grid grid-cols-2 gap-8 items-center justify-items-center max-w-2xl mx-auto">
+            {sponsors.map((sponsor, index) => (
+              <a
+                key={sponsor.id}
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`z-20 opacity-70 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center ${index === 2 ? 'col-span-1' : ''}`}
               >
-                LOGO
-              </div>
+                
+                <img
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    className="max-w-[120px] sm:max-w-[160px] h-auto object-contain drop-shadow-[0_0_8px_rgba(255,107,157,0.5)]"
+                  />
+                
+              </a>
             ))}
           </div>
         </motion.div>
-        */}
       </div>
     </section>
   );
