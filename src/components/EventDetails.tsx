@@ -5,6 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import julkku from '../assets/julkku_oranssi.png';
 import tek from '../assets/tek.svg';
 import netlight from '../assets/netlight.svg';
+import junction from '../assets/junction.svg';
 
 export function EventDetails() {
   const { t } = useLanguage();
@@ -13,6 +14,7 @@ export function EventDetails() {
       { id: 1, name: 'Netlight', logo: netlight, url: 'https://www.netlight.com/' },
       { id: 2, name: 'Julkku', logo: julkku, url: 'https://www.julkku.fi/' },
       { id: 3, name: 'TEK', logo: tek, url: 'https://www.tek.fi/fi' },
+      { id: 4, name: 'Junction', logo: junction, url: 'https://hackjunction.com/' },
     ];
 
   return (
