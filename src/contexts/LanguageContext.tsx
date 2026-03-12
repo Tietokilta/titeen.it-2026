@@ -70,7 +70,7 @@ const translations = {
     'timetable.sunday': 'Sunnuntai 15.3.',
     'timetable.sunday.wakeup': 'Herätys',
     'timetable.sunday.breakfast': 'Aamiainen',
-    'timetable.sunday.leaving': 'Poistuminen majoituksista',
+    'timetable.sunday.leaving': 'Poistuminen',
     
     // Locations
     'locations.title': 'SIJAINNIT',

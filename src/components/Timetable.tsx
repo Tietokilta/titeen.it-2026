@@ -87,19 +87,34 @@ export function Timetable() {
     ],
     sunday: [
       {
-        time: "8:00",
+        time: "08:00",
         event: t("timetable.sunday.wakeup"),
         location: null,
       },
       {
-        time: "8:30",
+        time: "08:15",
+        event: t("timetable.sunday.leaving"),
+        location: t("locations.rantasauna"),
+      },
+      {
+        time: "08:30",
         event: t("timetable.sunday.breakfast"),
+        location: t("locations.ok20"),
+      },
+      {
+        time: "11:00",
+        event: t("timetable.sunday.leaving"),
+        location: t("locations.forenom"),
+      },
+      {
+        time: "11:00",
+        event: t("timetable.sunday.leaving"),
         location: t("locations.ok20"),
       },
       {
         time: "12:00",
         event: t("timetable.sunday.leaving"),
-        location: null,
+        location: t("locations.heymo"),
       },
     ],
   };
