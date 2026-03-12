@@ -46,21 +46,42 @@ const sleeping_locations = [
 
 const important_locations = [
   { 
-    nameKey: 'locations.kandidaattikeskus',
-    address: 'Otakaari 1',
-    coords: [60.1859838, 24.8271078],
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Kandidaattikeskus+Otaniemi',
-    icon: uniIcon
-  },
-  { 
     nameKey: 'locations.smokki',
     address: 'Jämeräntaival 4',
     coords: [60.1883511, 24.8365035],
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Smökki+Otaniemi',
     icon: partyIcon
   },
+  { 
+    nameKey: 'locations.tip',
+    address: 'Servin Maijan tie',
+    coords: [60.191338, 24.838338],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=60.191338,24.838338',
+    icon: uniIcon
+  },
+  { 
+    nameKey: 'locations.u2',
+    address: 'Otakaari 1',
+    coords: [60.187422, 24.828925],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=60.187422,24.828925',
+    icon: uniIcon
+  },
+  { 
+    nameKey: 'locations.alvari',
+    address: 'Alvarin aukio',
+    coords: [60.185182, 24.829090],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Alvarinaukio',
+    icon: uniIcon
+  },
   {
-    nameKey: 'BMK',
+    nameKey: 'locations.tf',
+    address: 'Otakaari 22',
+    coords: [60.186076, 24.832900],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Täffä+AB',
+    icon: partyIcon
+  },
+  {
+    nameKey: 'locations.bmk',
     address: 'Betonimiehenkuja 3',
     coords: [60.1805879, 24.8323172],
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Betonimiehenkuja+3+Otaniemi',
@@ -113,7 +134,7 @@ export function Map() {
             {t('locations.title')}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto relative z-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 mx-auto relative z-20">
             {important_locations.map((location, index) => (
               <motion.div
                 key={index}
