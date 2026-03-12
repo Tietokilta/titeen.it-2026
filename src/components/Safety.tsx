@@ -1,13 +1,14 @@
-import { Plus, Minus, Heart } from 'lucide-react';
-import { useState, ReactNode } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { Plus, Minus, Heart, Phone, Send, Clock } from "lucide-react";
+import { useState, ReactNode } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from './ui/accordion';
-import { motion } from 'framer-motion';
+} from "./ui/accordion";
+import { motion } from "framer-motion";
+import hcpData from "./hcp-data.json";
 
 // Helper function to parse link markers and render them as JSX
 function parseLinks(text: string, t: (key: string) => string): ReactNode[] {
@@ -36,7 +37,7 @@ function parseLinks(text: string, t: (key: string) => string): ReactNode[] {
         className="text-[#ff6b9d] font-bold hover:underline"
       >
         {linkText}
-      </a>
+      </a>,
     );
 
     lastIndex = linkRegex.lastIndex;
@@ -51,7 +52,7 @@ function parseLinks(text: string, t: (key: string) => string): ReactNode[] {
 }
 
 export function Safety() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [openItems, setOpenItems] = useState<string[]>([]);
 
   return (
@@ -65,7 +66,7 @@ export function Safety() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-center text-3xl sm:text-4xl md:text-5xl mb-16 text-[#ff6b9d] retro-title neon-text">
-            {t('safety.title')}
+            {t("safety.title")}
           </h2>
         </motion.div>
 
@@ -79,19 +80,21 @@ export function Safety() {
           {/* General Guidelines */}
           <div className="flex flex-col gap-6 items-start bg-[#16213e] border-4 border-[#ff6b9d] p-2 sm:p-6 md:p-10 neon-box">
             <h3 className="text-xl md:text-2xl font-bold text-[#ff6b9d] tracking-wider">
-              {t('safety.guidelinesTitle')}
+              {t("safety.guidelinesTitle")}
             </h3>
             <p className="text-white text-base md:text-lg leading-relaxed text-lg">
-              {parseLinks(t('safety.intro'), t)}
+              {parseLinks(t("safety.intro"), t)}
             </p>
-
-            
 
             <ul className="text-white space-y-5">
               {[1, 2, 3, 4, 5, 6].map((num) => (
                 <li key={num} className="flex gap-4 items-start">
-                  <span className="text-[#ff6b9d] font-bold flex-shrink-0 mt-0.75">•</span>
-                  <span className="text-lg leading-relaxed flex-1">{parseLinks(t(`safety.guidelines.${num}`), t)}</span>
+                  <span className="text-[#ff6b9d] font-bold flex-shrink-0 mt-0.75">
+                    •
+                  </span>
+                  <span className="text-lg leading-relaxed flex-1">
+                    {parseLinks(t(`safety.guidelines.${num}`), t)}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -105,11 +108,27 @@ export function Safety() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Accordion type="multiple" className="space-y-8" onValueChange={setOpenItems}>
+          <Accordion
+            type="multiple"
+            className="space-y-8"
+            onValueChange={setOpenItems}
+          >
             {[
-              { id: 'action', titleKey: 'safety.actionTitle', contentKey: 'safety.action' },
-              { id: 'ifEncounter', titleKey: 'safety.ifEncounterTitle', contentKey: 'safety.ifEncounter' },
-              { id: 'hcp', titleKey: 'safety.hcpTitle', contentKey: 'safety.hcp' },
+              {
+                id: "action",
+                titleKey: "safety.actionTitle",
+                contentKey: "safety.action",
+              },
+              {
+                id: "ifEncounter",
+                titleKey: "safety.ifEncounterTitle",
+                contentKey: "safety.ifEncounter",
+              },
+              {
+                id: "hcp",
+                titleKey: "safety.hcpTitle",
+                contentKey: "safety.hcp",
+              },
             ].map(({ id, titleKey, contentKey }) => (
               <AccordionItem
                 key={id}
@@ -119,14 +138,14 @@ export function Safety() {
                 <AccordionTrigger className="text-white font-bold md:text-2xl hover:bg-[#0f3460] hover:no-underline transition-colors group [&_svg]:hidden justify-between">
                   <div className="flex items-center md:text-2xl font-bold text-[#ff6b9d] tracking-wider flex-1 min-w-0">
                     <Heart className="w-8 h-8 text-[#ff6b9d] group-hover:scale-110 transition-transform flex-shrink-0" />
-                    <span 
+                    <span
                       className="tracking-wider text-left px-2 md:px-4"
                       style={{
-                        hyphens: 'auto',
-                        WebkitHyphens: 'auto',
-                        msHyphens: 'auto',
-                        overflowWrap: 'break-word',
-                        wordBreak: 'break-word',
+                        hyphens: "auto",
+                        WebkitHyphens: "auto",
+                        msHyphens: "auto",
+                        overflowWrap: "break-word",
+                        wordBreak: "break-word",
                       }}
                     >
                       {t(titleKey)}
@@ -140,10 +159,61 @@ export function Safety() {
                 </AccordionTrigger>
                 <AccordionContent className="text-white border-t-2 border-[#ff6b9d]/30 bg-[#16213e]">
                   <div className="flex flex-col gap-6">
+                    {id === "hcp" && (
+                      <div className="flex flex-wrap justify-center gap-6 mt-4">
+                        {hcpData.map((person) => (
+                          <div
+                            key={person.name}
+                            className="hcp flex flex-col gap-2 text-lg bg-[#0f3460] p-4"
+                          >
+                            <img
+                              src={person.photo}
+                              alt={person.name}
+                              className="m-4 object-cover"
+                            />
+                            <h4 className="text-[#ff6b9d] font-bold text-lg text-center">
+                              {person.name}
+                            </h4>
+                            <div className="flex items-center gap-2 text-white whitespace-nowrap">
+                              <Clock className="w-4 h-4 flex-shrink-0" />
+                              {language === "fi"
+                                ? person.dateFi
+                                : person.dateEn}
+                            </div>
+                            <a
+                              href={`tel:${person.phone}`}
+                              className="flex items-center gap-2 text-white hover:text-[#ff6b9d] transition-colors"
+                            >
+                              <Phone className="w-4 h-4 flex-shrink-0" />
+                              <span>{person.phone}</span>
+                            </a>
+                            <a
+                              href={`https://t.me/${person.telegram}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-white hover:text-[#ff6b9d] transition-colors"
+                            >
+                              <Send className="w-4 h-4 flex-shrink-0" />
+                              <span>@{person.telegram}</span>
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     {t(contentKey)
-                      .split('\n\n')
+                      .split("\n\n")
                       .map((paragraph, idx) => (
-                        <p key={idx} className="leading-relaxed text-lg md:text-lg" style={{ overflowWrap: 'break-word', hyphens: 'auto', WebkitHyphens: 'auto' } as any}>
+                        <p
+                          key={idx}
+                          className="leading-relaxed text-lg md:text-lg"
+                          style={
+                            {
+                              overflowWrap: "break-word",
+                              hyphens: "auto",
+                              WebkitHyphens: "auto",
+                            } as any
+                          }
+                        >
                           {parseLinks(paragraph, t)}
                         </p>
                       ))}

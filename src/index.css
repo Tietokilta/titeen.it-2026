@@ -1846,6 +1846,26 @@
   margin-top: 0.1875rem;
 }
 
+.grid {
+  display: grid;
+}
+
+.grid-cols-\[repeat\(auto-fill\,_minmax\(220px\,_1fr\)\)\] {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.hcp {
+  flex: 0 0 clamp(240px, 25%, 300px);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
 /* Smooth accordion animations */
 @keyframes accordion-down {
   from {

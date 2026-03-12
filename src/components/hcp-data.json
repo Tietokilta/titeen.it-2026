@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Test Person 1",
+        "dateFi": "pe 12\u201318, la 13\u201318",
+        "dateEn": "Fri 12\u201318, Sat 13\u201318",
+        "phone": "+358 40 1234567",
+        "telegram": "testperson1",
+        "photo": "https://placecats.com/1024/1024"
+    },
+    {
+        "name": "Test Person 2",
+        "dateFi": "pe 12\u201318, la 13\u201318",
+        "dateEn": "Fri 12\u201318, Sat 13\u201318",
+        "phone": "+358 40 1234567",
+        "telegram": "testperson1",
+        "photo": "https://placecats.com/1024/1024"
+    },
+    {
+        "name": "Test Person 3",
+        "dateFi": "pe 12\u201318",
+        "dateEn": "Fri 12\u201318",
+        "phone": "+358 40 1234567",
+        "telegram": "testperson1",
+        "photo": "https://placecats.com/1024/1024"
+    },
+    {
+        "name": "Test Person 4",
+        "dateFi": "pe 12\u201318, la 13\u201318",
+        "dateEn": "Fri 12\u201318, Sat 13\u201318",
+        "phone": "+358 40 1234567",
+        "telegram": "testperson1",
+        "photo": "https://placecats.com/1024/1024"
+    }
+]

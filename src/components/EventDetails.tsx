@@ -137,7 +137,7 @@ export function EventDetails() {
                 <img
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
-                    className="max-w-[120px] sm:max-w-[160px] h-auto object-contain drop-shadow-[0_0_8px_rgba(255,107,157,0.5)]"
+                    className="h-auto object-contain drop-shadow-[0_0_8px_rgba(255,107,157,0.5)]"
                   />
                 
               </a>

@@ -20,6 +20,10 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
+    - # Personal info is not kept in Git
+      name: Insert personal information
+      run: echo '${{ vars.HCP_DATA }}' > src/components/hcp-data.json
+
     - name: Build with Vite
       run: npm run build
 
