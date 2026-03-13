@@ -55,8 +55,8 @@ const important_locations = [
   { 
     nameKey: 'locations.tip',
     address: 'Servin Maijan tie',
-    coords: [60.191338, 24.838338],
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=60.191338,24.838338',
+    coords: [60.19137746704634, 24.83517463596263],
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=60.19137746704634,24.83517463596263',
     icon: uniIcon
   },
   { 
