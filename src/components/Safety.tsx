@@ -159,47 +159,6 @@ export function Safety() {
                 </AccordionTrigger>
                 <AccordionContent className="text-white border-t-2 border-[#ff6b9d]/30 bg-[#16213e]">
                   <div className="flex flex-col gap-6">
-                    {id === "hcp" && (
-                      <div className="flex flex-wrap justify-center gap-6 mt-4">
-                        {hcpData.map((person) => (
-                          <div
-                            key={person.name}
-                            className="hcp flex flex-col gap-2 text-lg bg-[#0f3460] p-4"
-                          >
-                            <img
-                              src={person.photo}
-                              alt={person.name}
-                              className="m-4 object-cover"
-                            />
-                            <h4 className="text-[#ff6b9d] font-bold text-lg text-center">
-                              {person.name}
-                            </h4>
-                            <div className="flex items-center gap-2 text-white whitespace-nowrap">
-                              <Clock className="w-4 h-4 flex-shrink-0" />
-                              {language === "fi"
-                                ? person.dateFi
-                                : person.dateEn}
-                            </div>
-                            <a
-                              href={`tel:${person.phone}`}
-                              className="flex items-center gap-2 text-white hover:text-[#ff6b9d] transition-colors"
-                            >
-                              <Phone className="w-4 h-4 flex-shrink-0" />
-                              <span>{person.phone}</span>
-                            </a>
-                            <a
-                              href={`https://t.me/${person.telegram}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-white hover:text-[#ff6b9d] transition-colors"
-                            >
-                              <Send className="w-4 h-4 flex-shrink-0" />
-                              <span>@{person.telegram}</span>
-                            </a>
-                          </div>
-                        ))}
-                      </div>
-                    )}
                     {t(contentKey)
                       .split("\n\n")
                       .map((paragraph, idx) => (
