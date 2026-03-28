@@ -1,6 +1,5 @@
 import logoImage from 'figma:asset/titeenit_logo_valmis_ajalla.png';
 import { motion } from 'motion/react';
-import { Countdown } from './Countdown';
 
 export function Hero() {
   return (
@@ -22,7 +21,6 @@ export function Hero() {
           />
         </motion.div>
 
-        <Countdown />
       </div>
     </section>
   );

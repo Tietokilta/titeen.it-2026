@@ -13,9 +13,21 @@ const translations = {
     // Navigation
     'nav.main': 'Etusivu',
     'nav.info': 'Info',
+    'nav.scoreboard': 'Tulokset',
     'nav.timetable': 'Aikataulu',
     'nav.map': 'Kartta',
     'nav.safety': 'Turvallisuus',
+
+    // Scoreboard
+    'scoreboard.heading': 'TULOKSET',
+    'scoreboard.row.event1': 'Taikametsän kaljanetsintä',
+    'scoreboard.row.event2': 'Minecraft Partybattle',
+    'scoreboard.row.event3': 'Squid Game ahh rastirata',
+    'scoreboard.row.event4': 'Multiplayer LeetCode',
+    'scoreboard.row.otaniemipeli': 'Otaniemipeli',
+    'scoreboard.row.titeeniParty': 'Titeeni Party',
+    'scoreboard.row.judges': 'Tuomaripisteet',
+    'scoreboard.row.total': 'Yhteensä',
     
     // Hero
     'hero.date': '13.-15.3.2026',
@@ -123,9 +135,21 @@ const translations = {
     // Navigation
     'nav.main': 'Main',
     'nav.info': 'Info',
+    'nav.scoreboard': 'Scoreboard',
     'nav.timetable': 'Timetable',
     'nav.map': 'Map',
     'nav.safety': 'Safety',
+
+    // Scoreboard
+    'scoreboard.heading': 'RESULTS',
+    'scoreboard.row.event1': 'Taikametsä Beer Search',
+    'scoreboard.row.event2': 'Minecraft Partybattle',
+    'scoreboard.row.event3': 'Squid Game Ahh Checkpoint Race',
+    'scoreboard.row.event4': 'Multiplayer LeetCode',
+    'scoreboard.row.otaniemipeli': 'Otaniemipeli',
+    'scoreboard.row.titeeniParty': 'Titeeni Party',
+    'scoreboard.row.judges': 'Judges\' Points',
+    'scoreboard.row.total': 'Total',
     
     // Hero
     'hero.date': '13.-15.3.2026',

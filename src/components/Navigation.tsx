@@ -47,6 +47,7 @@ export function Navigation() {
 
   const menuItems = [
     { label: t('nav.main'), id: 'hero' },
+    { label: t('nav.scoreboard'), id: 'scoreboard' },
     { label: t('nav.info'), id: 'info' },
     { label: t('nav.timetable'), id: 'timetable' },
     { label: t('nav.map'), id: 'map' },
